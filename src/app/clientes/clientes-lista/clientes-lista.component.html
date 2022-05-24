@@ -29,19 +29,43 @@
             <table class="table table-condensed table-hover">
                 <thead>
                     <tr>
-                        <th>ID</th>
-                        <th>Nome</th>
-                        <th>CPF</th>
-                        <th>Data Cadastro</th>
-                        <th></th>
+                        <th>SEMANA</th>
+                        <th>CLIENTES</th>
+                        <th>CIDADE</th>
+                        <th>TP Proc.</th>
+                        <th>N. EMBARC.</th>
+                        <th>ORIGEM</th>
+                        <th>F. PGTO</th>
+                        <th>BANCO</th>
+                        <th>DT.RECEB</th>
+                        <th>CX REC.</th>
+                        <th>VR SERV.</th>
+                        <th>RECEBIDO</th>
+                        <th>Á RECEBER</th>
+                        <th>ST. PGT.</th>
+                        <th>GRU</th>
+                        <th>VR LIQ.</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr *ngFor="let cliente of clientes">
-                        <td>{{ cliente.id }}</td>
+                        
+                        <td>{{ cliente.semana }}</td>
                         <td>{{ cliente.nome }}</td>
-                        <td>{{ cliente.cpf }}</td>
-                        <td>{{ cliente.dataCadastro }}</td>
+                        <td>{{ cliente.cidade }}</td>
+                        <td>{{ cliente.tipoProcesso }}</td>
+                        <td>{{ cliente.numEmbarc }}</td>
+                        <td>{{ cliente.origem }}</td>
+                        <td>{{ cliente.formPgto }}</td>
+                        <td>{{ cliente.banco }}</td>
+                        <td>{{ cliente.dataReceb }}</td>
+                        <td>{{ cliente.caixaRecebido }}</td>
+                        <td>{{ cliente.valorServico }}</td>
+                        <td>{{ cliente.recebibo }}</td>
+                        <td>{{ cliente.areceber }}</td>
+                        <td>{{ cliente.situacaoPagamento }}</td>
+                        <td>{{ cliente.gru }}</td>
+                        <td>{{ cliente.valorLiquido }}</td>
                         <td>
                             <button class="btn btn-primary" 
                                     routerLink="/clientes-form/{{ cliente.id }}">
