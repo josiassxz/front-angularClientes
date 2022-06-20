@@ -1,10 +1,12 @@
 
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute, Params } from '@angular/router'
+import { Router, ActivatedRoute, Params } from '@angular/router';
 
-import { Cliente } from '../cliente'
-import { ClientesService } from '../../clientes.service'
+import { Cliente } from '../cliente';
+import { ClientesService } from '../../clientes.service';
 import { Observable } from 'rxjs';
+import * as moment from 'moment';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-clientes-form',
@@ -18,32 +20,34 @@ export class ClientesFormComponent implements OnInit {
   errors: string[];
   id: number;
 
+
+
   constructor(private service: ClientesService, private router: Router, private activatedRoute: ActivatedRoute) {
     this.cliente = new Cliente();
   }
 
   ngOnInit(): void {
-    let params : Observable<Params> = this.activatedRoute.params
+    const params: Observable<Params> = this.activatedRoute.params;
     params.subscribe( urlParams => {
         this.id = urlParams['id'];
-        if(this.id){
+        if (this.id){
           this.service
             .getClienteById(this.id)
-            .subscribe( 
+            .subscribe(
               response => this.cliente = response ,
               errorResponse => this.cliente = new Cliente()
-            )
+            );
         }
-    })
+    });
   }
 
   voltarParaListagem() {
-    this.router.navigate(['/clientes-lista'])
+    this.router.navigate(['/clientes-lista']);
   }
 
 
   onSubmit(){
-    if(this.id){
+    if (this.id){
 
       this.service
         .atualizar(this.cliente)
@@ -51,8 +55,8 @@ export class ClientesFormComponent implements OnInit {
             this.success = true;
             this.errors = null;
         }, errorResponse => {
-          this.errors = ['Erro ao atualizar o cliente.']
-        })
+          this.errors = ['Erro ao atualizar o cliente.'];
+        });
 
 
     }else{
@@ -66,7 +70,7 @@ export class ClientesFormComponent implements OnInit {
           } , errorResponse => {
             this.success = false;
             this.errors = errorResponse.error.errors;
-          })
+          });
 
     }
 

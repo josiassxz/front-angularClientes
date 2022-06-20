@@ -1,73 +1,164 @@
 <h1 class="mt-4">Clientes</h1>
 <ol class="breadcrumb mb-4">
-    <li class="breadcrumb-item active">{{ cliente.id ? 'Edição' : 'Cadastro'}}</li>
+  <li class="breadcrumb-item active">{{ cliente.id ? 'Edição' : 'Cadastro'}}</li>
 </ol>
 <div class="container">
-    <form #clienteForm="ngForm" (ngSubmit)="onSubmit()">
+  <form #clienteForm="ngForm" (ngSubmit)="onSubmit()">
 
-        <div class="row">
-            <div class="col-md-12">
-                <div class="alert alert-success" role="alert" *ngIf="success == true">
-                    Cliente salvo/atualizado com sucesso!
-                </div>
-
-                <div class="alert alert-danger" role="alert" *ngFor="let erro of errors">
-                    {{erro}}
-                </div>
-            </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="alert alert-success" role="alert" *ngIf="success == true">
+          Cliente salvo/atualizado com sucesso!
         </div>
-        <div class="row" *ngIf="cliente.id">
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label>ID:</label>
-                    <input type="text" class="form-control" [ngModel]="cliente.id" name="id" disabled="true" />
-                </div>
-            </div>
 
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label>Data Cadastro:</label>
-                    <input type="text" class="form-control" name="dataCadastro" [ngModel]="cliente.dataCadastro"
-                        disabled="true" />
-                </div>
-            </div>
+        <div class="alert alert-danger" role="alert" *ngFor="let erro of errors">
+          {{erro}}
         </div>
-        <div class="row" >
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label>Nome: *</label>
-                    <input type="text" class="form-control" [(ngModel)]="cliente.nome" name="nome" />
-                </div>
-            </div>
+      </div>
+    </div>
+    <div class="row" *ngIf="cliente.id">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label>ID:</label>
+          <input type="text" class="form-control" [ngModel]="cliente.id" name="id" disabled="true"/>
+        </div>
+      </div>
 
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label>CPF: *</label>
-                    <input type="text" class="form-control" [(ngModel)]="cliente.cpf" name="cpf" />
-                </div>
-            </div>
-         </div>   
+    </div>
+    <div class="row">
+      <div class="col-md-2">
+        <div class="form-group">
+          <label>Semana: *</label>
+          <input type="text" class="form-control" [(ngModel)]="cliente.semana" name="data" />
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="form-group">
+          <label>Nome Cliente: *</label>
+          <input type="text" class="form-control" [(ngModel)]="cliente.nome" name="nome"/>
+        </div>
+      </div>
+
+      <div class="col-md-2">
+        <div class="form-group">
+          <label>Cidade: *</label>
+          <input type="text" class="form-control" [(ngModel)]="cliente.cidade" name="cidade"/>
+        </div>
+      </div>
+
+      <div class="col-md-2">
+        <div class="form-group">
+          <label>Tipo Processo: *</label>
+          <input type="text" class="form-control" [(ngModel)]="cliente.tipoProcesso" name="tipoProcesso"/>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="form-group">
+          <label>N. Embarc: *</label>
+          <input type="text" class="form-control" [(ngModel)]="cliente.numEmbarc" name="nomeEmbarcacao"/>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="form-group">
+          <label>Origem: *</label>
+          <input type="text" class="form-control" [(ngModel)]="cliente.origem" name="origem"/>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="form-group">
+          <label>Form. Pagament: *</label>
+          <input type="text" class="form-control" [(ngModel)]="cliente.formPgto" name="formaPgto"/>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="form-group">
+          <label>Banco: *</label>
+          <input type="text" class="form-control" [(ngModel)]="cliente.banco" name="banco"/>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="form-group">
+          <label>Data Recebimento: *</label>
+          <input type="text" class="form-control" [(ngModel)]="cliente.dataReceb" name="dataRecebimento" />
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="form-group">
+          <label>Cx Recebido: *</label>
+          <input type="text" class="form-control" [(ngModel)]="cliente.caixaRecebido" name="caixaRecebido"/>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="form-group">
+          <label>Valor Serviço: *</label>
+          <input type="text" class="form-control" [(ngModel)]="cliente.valorServico" name="valorServico"/>
+          </div>
+        </div>
+      <div class="col-md-2">
+        <div class="form-group">
+          <label>Valor Recebido: *</label>
+          <input type="text" value="" class="form-control" [(ngModel)]="cliente.recebibo" name="valorRecebido"/>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="form-group">
+          <label>Valor á Receber: *</label>
+          <input type="text" value="" class="form-control" [(ngModel)]="cliente.areceber" name="valorAReceber"/>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="form-group">
+          <label>Situação Pagamento: *</label>
+          <input type="text" value="" class="form-control" [(ngModel)]="cliente.situacaoPagamento" name="situacaoPagamento"/>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="form-group">
+          <label>GRU: *</label>
+          <input type="text" value="" class="form-control" [(ngModel)]="cliente.gru" name="gru"/>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="form-group">
+          <label>Valor Liquido: *</label>
+          <input type="text" value="" class="form-control" [(ngModel)]="cliente.valorLiquido" name="valorLiquido"/>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <select class="selectpicker">
+            <option class="teste">Mustard</option>
+            <option>Ketchup</option>
+            <option>Relish</option>
+        </select>
+
+      </div>
 
 
-            <div class="row">
-                <div class="col-md-3">
-                    <button type="submit" class="btn btn-success" *ngIf="!cliente.id">
-                        <i class="fa fa-save"></i> Salvar
-                    </button>
-
-                    <button type="submit" class="btn btn-primary" *ngIf="cliente.id">
-                        <i class="fa fa-sync-alt"></i> Atualizar
-                    </button>
-
-                    <button type="button" class="btn btn-danger ml-1" (click)="voltarParaListagem()">
-                        <i class="fa fa-arrow-alt-circle-left"></i> Voltar
-                    </button>
-                </div>
-               
-            </div>
 
 
 
 
-    </form>
+
+    </div>
+
+
+    <div class="row">
+      <div class="col-md-3">
+        <button type="submit" class="btn btn-success" *ngIf="!cliente.id">
+          <i class="fa fa-save"></i> Salvar
+        </button>
+
+        <button type="submit" class="btn btn-primary" *ngIf="cliente.id">
+          <i class="fa fa-sync-alt"></i> Atualizar
+        </button>
+
+        <button type="button" class="btn btn-danger ml-1" (click)="voltarParaListagem()">
+          <i class="fa fa-arrow-alt-circle-left"></i> Voltar
+        </button>
+      </div>
+
+    </div>
+
+
+  </form>
 </div>

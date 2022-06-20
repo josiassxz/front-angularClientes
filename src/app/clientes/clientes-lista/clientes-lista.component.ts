@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router'
+import { Router } from '@angular/router';
 
 import { Cliente } from '../cliente';
-import { ClientesService } from '../../clientes.service'
+import { ClientesService } from '../../clientes.service';
 
 @Component({
   selector: 'app-clientes-lista',
@@ -27,7 +27,7 @@ export class ClientesListaComponent implements OnInit {
   }
 
   novoCadastro() {
-    this.router.navigate(['/clientes-form'])
+    this.router.navigate(['/clientes-form']);
   }
 
   preparaDelecao(cliente: Cliente) {
@@ -39,10 +39,10 @@ export class ClientesListaComponent implements OnInit {
       .deletar(this.clienteSelecionado)
       .subscribe(
         response => {
-          this.mensagemSucesso = 'Cliente deletado com sucesso!'
+          this.mensagemSucesso = 'Cliente deletado com sucesso!';
           this.ngOnInit();
         },
         erro => this.mensagemErro = 'Ocorreu um erro ao deletar o cliente.'
-      )
+      );
   }
 }

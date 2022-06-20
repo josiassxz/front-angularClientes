@@ -1,15 +1,18 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http'
+import { LOCALE_ID , NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { TemplateModule } from './template/template.module';
-import { HomeComponent } from './home/home.component'
-import { ClientesModule } from './clientes/clientes.module'
-import { ClientesService } from './clientes.service'
-import {} from './clientes/clientes-lista/clientes-lista.component'
+import { HomeComponent } from './home/home.component';
+import { ClientesModule } from './clientes/clientes.module';
+import { ClientesService } from './clientes.service';
+
+import {} from './clientes/clientes-lista/clientes-lista.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 
 @NgModule({
   declarations: [
@@ -21,11 +24,15 @@ import {} from './clientes/clientes-lista/clientes-lista.component'
     HttpClientModule,
     AppRoutingModule,
     TemplateModule,
-    ClientesModule
+    ClientesModule,
+    NgbModule,
   ],
   providers: [
-    ClientesService
+    ClientesService,
+    { provide: LOCALE_ID, useValue: 'pt-BR' }
+
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
