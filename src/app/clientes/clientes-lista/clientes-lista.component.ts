@@ -32,6 +32,7 @@ export class ClientesListaComponent implements OnInit {
 
   preparaDelecao(cliente: Cliente) {
     this.clienteSelecionado = cliente;
+    this.deletarCliente();
   }
 
   deletarCliente() {
