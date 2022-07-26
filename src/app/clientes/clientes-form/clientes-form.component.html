@@ -49,7 +49,41 @@
       <div class="col-md-2">
         <div class="form-group">
           <label>Tipo Processo: *</label>
-          <input type="text" class="form-control" [(ngModel)]="cliente.tipoProcesso" name="tipoProcesso"/>
+<!--          <input type="text" class="form-control" [(ngModel)]="cliente.tipoProcesso" name="tipoProcesso"/>-->
+          <select class="form-control" [ngModelOptions]="{standalone: true}"
+                  [(ngModel)]="cliente.tipoProcesso" >
+              <option value="">Selecione...</option>
+              <option>2° VIA CHA</option>
+              <option>ALTERACÃO DADOS</option>
+              <option>BOTE</option>
+              <option>C. DE VENDA</option>
+              <option>CANOA</option>
+              <option>CATAMARÃ</option>
+              <option>CERT.INT TEOR</option>
+              <option>CHATA</option>
+              <option>DESP.CARTÓRIO</option>
+              <option>DESP.CORREIO</option>
+              <option>DRAGA</option>
+              <option>ESC. DE MULTA</option>
+              <option>FLUTUANTE</option>
+              <option>INCL.MTA</option>
+              <option>JET BOAT</option>
+              <option>JET SKI</option>
+              <option>LANCHA</option>
+              <option>MOTOQUEIRO</option>
+              <option>OUTRAS EMB.</option>
+              <option>RENOV + CONCES.</option>
+              <option>RENOV C/ INCL.</option>
+              <option>RENOV. CHA</option>
+              <option>RENOV. CIR</option>
+              <option>SERV. COLETAS</option>
+              <option>TP PROC.</option>
+              <option>TRIMARÃ.</option>
+              <option>X</option>
+
+
+
+          </select>
         </div>
       </div>
       <div class="col-md-3">
@@ -61,7 +95,37 @@
       <div class="col-md-2">
         <div class="form-group">
           <label>Origem: *</label>
-          <input type="text" class="form-control" [(ngModel)]="cliente.origem" name="origem"/>
+<!--          <input type="text" class="form-control" [(ngModel)]="cliente.origem" name="origem"/>-->
+          <select class="form-control" [(ngModel)]="cliente.origem" [ngModelOptions]="{standalone: true}">
+             <option>AGM</option>
+             <option>APN</option>
+            <option>B.FISHER</option>
+            <option>B.PARANA</option>
+            <option>C.PRESIDENTE</option>
+            <option>C.RONDON</option>
+            <option>C.PESCADOR</option>
+            <option>DANILO</option>
+            <option>DIAS NAUTICA</option>
+            <option>ENILDON</option>
+            <option>JOAO CATALÃO</option>
+            <option>MAIS VEICULOS</option>
+            <option>MARCA NAUTICA</option>
+            <option>MARINA DOS AMIGOS</option>
+            <option>ORCA</option>
+            <option>ORIGEM</option>
+            <option>PART.</option>
+            <option>PIER BOATS</option>
+            <option>PIER NAUTICA</option>
+            <option>RADIAL AUTOMOVEIS</option>
+            <option>SAGA APS</option>
+            <option>SAIMONT</option>
+            <option>SÓ PESCA</option>
+            <option>STATUS NAUTICA</option>
+            <option>TSA</option>
+            <option>VNB</option>
+            <option>VNG</option>
+            <option>X</option>
+            </select>
         </div>
       </div>
       <div class="col-md-2">
@@ -124,19 +188,6 @@
           <input type="text" value="" class="form-control" [(ngModel)]="cliente.valorLiquido" name="valorLiquido"/>
         </div>
       </div>
-      <div class="col-md-2">
-        <select class="selectpicker">
-            <option class="teste">Mustard</option>
-            <option>Ketchup</option>
-            <option>Relish</option>
-        </select>
-
-      </div>
-
-
-
-
-
 
 
     </div>
