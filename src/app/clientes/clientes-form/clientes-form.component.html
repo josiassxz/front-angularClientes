@@ -128,10 +128,37 @@
             </select>
         </div>
       </div>
+<!--      <div class="col-md-2">-->
+<!--        <div class="form-group">-->
+<!--          <label>Form. Pagament: *</label>-->
+<!--&lt;!&ndash;          <input type="text" class="form-control" [(ngModel)]="cliente.formPgto" name="formaPgto"/>&ndash;&gt;-->
+<!--          <select class="form-control" [(ngModel)]="cliente.origem" [ngModelOptions]="{standalone: true}">-->
+<!--        </div>-->
+<!--      </div>-->
       <div class="col-md-2">
         <div class="form-group">
           <label>Form. Pagament: *</label>
-          <input type="text" class="form-control" [(ngModel)]="cliente.formPgto" name="formaPgto"/>
+          <!--          <input type="text" class="form-control" [(ngModel)]="cliente.origem" name="origem"/>-->
+          <select class="form-control" [(ngModel)]="cliente.formPgto" [ngModelOptions]="{standalone: true}">
+            <option>F.PGTO</option>
+            <option>DEPOSITO</option>
+            <option>DINHEIRO</option>
+            <option>C.DEBITO</option>
+            <option>CHQ A VISTA</option>
+            <option>CHQ PARCELADO</option>
+            <option>DINH + CHQ</option>
+            <option>DINH + CHQS</option>
+            <option>BOLETO A VISTA</option>
+            <option>PERMUTA</option>
+            <option>CREDITO PARCEIRO</option>
+            <option>BOLETO PARC</option>
+            <option>X</option>
+            <option>PIX</option>
+            <option>BOLETO</option>
+            <option>CORTERSIA</option>
+            <option>DINHEIRO/PIX</option>
+            <option>OUTROS</option>
+          </select>
         </div>
       </div>
       <div class="col-md-2">
