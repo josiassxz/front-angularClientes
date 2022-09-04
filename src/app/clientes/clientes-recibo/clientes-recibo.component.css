@@ -1,0 +1,70 @@
+.selectpicker{
+  border-radius: 5px;
+  background-color: white;
+  font-size: 20px;
+}
+.selectpicker-option{
+  background-color: DodgerBlue;
+}
+
+
+select-option{
+  background-color: #0b2e13;
+}
+
+h1 {
+  color: darkblue;
+  font-weight: bold;
+}
+
+label{
+  font-weight: bold;
+  font-size: 20px;
+}
+
+h2{
+  color: red;
+}
+
+#descricao{
+  color: darkblue;
+  font-size: 28px;
+  text-decoration: underline;
+}
+
+#valorRecebido{
+  margin-left: 1000px;
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+#corAzul1{
+  color: darkblue;
+}
+
+#corPreta1{
+  color: black;
+}
+
+#corAzul{
+  color: darkblue;
+}
+
+#corPreta{
+  color: black;
+}
+
+#corAzul2{
+  color: darkblue;
+}
+
+#corPreta2{
+  color: black;
+}
+
+#pago{
+  color: darkblue;
+  font-size: 46px;
+  margin-left: 1000px;
+  text-decoration: underline;
+}
