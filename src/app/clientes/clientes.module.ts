@@ -6,9 +6,10 @@ import { TextMaskModule } from 'angular2-text-mask';
 import { ClientesRoutingModule } from './clientes-routing.module';
 import { ClientesFormComponent } from './clientes-form/clientes-form.component';
 import { ClientesListaComponent } from './clientes-lista/clientes-lista.component';
+import { ClientesReciboComponent } from './clientes-recibo/clientes-recibo.component';
 
 @NgModule({
-  declarations: [ClientesFormComponent, ClientesListaComponent],
+  declarations: [ClientesFormComponent, ClientesListaComponent, ClientesReciboComponent],
   imports: [
     CommonModule,
     ClientesRoutingModule,
@@ -16,7 +17,7 @@ import { ClientesListaComponent } from './clientes-lista/clientes-lista.componen
     TextMaskModule
   ], exports: [
     ClientesFormComponent,
-    ClientesListaComponent
+    ClientesListaComponent,
   ],
 
 })
