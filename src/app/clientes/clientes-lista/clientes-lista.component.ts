@@ -30,6 +30,10 @@ export class ClientesListaComponent implements OnInit {
     this.router.navigate(['/clientes-form']);
   }
 
+  imprimir() {
+        window.print();
+      }
+
   preparaDelecao(cliente: Cliente) {
     this.clienteSelecionado = cliente;
     this.deletarCliente();
