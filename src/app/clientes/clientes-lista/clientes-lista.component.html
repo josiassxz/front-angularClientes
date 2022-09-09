@@ -1,0 +1,131 @@
+<h1 class="mt-4">Clientes</h1>
+<ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item active">Consulta</li>
+</ol>
+<div class="container1">
+    <div class="row">
+        <div class="col-md-12">
+
+            <div class="alert alert-success" role="alert" *ngIf="mensagemSucesso">
+                {{ mensagemSucesso }}
+            </div>
+
+            <div class="alert alert-danger" role="alert" *ngIf="mensagemErro">
+                {{ mensagemErro  }}
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-2">
+            <button class="btn btn-warning" (click)="novoCadastro()" >
+                <i class="fa fa-plus"></i> Novo
+            </button>
+        </div>
+    </div>
+  <br>
+  <div class="ngx-autocomplete">
+    <ngx-autocomplete
+      [searchOnProperty]="nomeFiltro"
+      (inputChanged)='onChangeSearch($event)'
+      [itemTemplate]="itemTemplate"
+      [minQueryLength]="2"
+      (inputChanged)="pesquisaTeste()">
+    </ngx-autocomplete>
+
+    <ng-template #itemTemplate let-item>
+    <a [innerHTML]="item.name"></a>
+    </ng-template>
+
+    <ng-template #notFoundTemplate let-notFound>
+    <div [innerHTML]="notFound"></div>
+
+  </ng-template>
+</div>
+    <br />
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-condensed table-hover">
+                <thead>
+                    <tr>
+                        <th>SEMANA</th>
+                        <th>CLIENTES</th>
+                        <th>CIDADE</th>
+                        <th>TP Proc.</th>
+                        <th>N. EMBARC.</th>
+                        <th>ORIGEM</th>
+                        <th>F. PGTO</th>
+                        <th>BANCO</th>
+                        <th>DT.RECEB</th>
+                        <th>CX REC.</th>
+                        <th>VR SERV.</th>
+                        <th>RECEBIDO</th>
+                        <th>Á RECEBER</th>
+                        <th>ST. PGT.</th>
+                        <th>GRU</th>
+                        <th>VR LIQ.</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let cliente of clientes">
+
+                        <td>{{ cliente.semana }}</td>
+                        <td>{{ cliente.nome }}</td>
+                        <td>{{ cliente.cidade }}</td>
+                        <td>{{ cliente.tipoProcesso }}</td>
+                        <td>{{ cliente.numEmbarc }}</td>
+                        <td>{{ cliente.origem }}</td>
+                        <td>{{ cliente.formPgto }}</td>
+                        <td>{{ cliente.banco }}</td>
+                        <td>{{ cliente.dataReceb }}</td>
+                        <td>{{ cliente.caixaRecebido }}</td>
+                        <td>{{ cliente.valorServico }}</td>
+                        <td>{{ cliente.recebibo }}</td>
+                        <td>{{ cliente.areceber }}</td>
+                        <td>{{ cliente.situacaoPagamento }}</td>
+                        <td>{{ cliente.gru }}</td>
+                        <td>{{ cliente.valorLiquido }}</td>
+                        <td>
+                            <button class="btn btn-primary"
+                                    routerLink="/clientes-form/{{ cliente.id }}">
+                                <i class="fa fa-edit"></i>
+                            </button>
+
+                            <button class="btn btn-danger" (click)="preparaDelecao(cliente)"
+                                    data-toggle="modal" data-target="#modalDelecao">
+                                <i class="fa fa-trash"></i>
+                            </button>
+
+                          <a class="btn btn-success"
+                                  routerLink="/clientes-recibo/{{ cliente.id }}"  target="_blank"
+                          >
+                            <i class="fa fa-print"></i>
+                          </a>
+
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div id="modalDelecao" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4>Confirmação</h4>
+                </div>
+
+                <div class="modal-body" *ngIf="clienteSelecionado">
+                    Confirma a deleção do(a) Cliente {{ clienteSelecionado.nome }}?
+                </div>
+
+                <div class="modal-footer">
+                    <button class="btn btn-success" (click)="deletarCliente()"
+                            data-dismiss="modal">Confirmar</button>
+                    <button class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
