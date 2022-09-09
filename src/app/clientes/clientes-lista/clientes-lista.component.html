@@ -23,6 +23,25 @@
             </button>
         </div>
     </div>
+  <br>
+  <div class="ngx-autocomplete">
+    <ngx-autocomplete
+      [searchOnProperty]="nomeFiltro"
+      (inputChanged)='onChangeSearch($event)'
+      [itemTemplate]="itemTemplate"
+      [minQueryLength]="2"
+      (inputChanged)="pesquisaTeste()">
+    </ngx-autocomplete>
+
+    <ng-template #itemTemplate let-item>
+    <a [innerHTML]="item.name"></a>
+    </ng-template>
+
+    <ng-template #notFoundTemplate let-notFound>
+    <div [innerHTML]="notFound"></div>
+
+  </ng-template>
+</div>
     <br />
     <div class="row">
         <div class="col-md-12">

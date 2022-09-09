@@ -23,6 +23,7 @@
     "@angular/platform-browser-dynamic": "~9.1.1",
     "@angular/router": "~9.1.1",
     "@ng-bootstrap/ng-bootstrap": "^6.2.0",
+    "angular-ngx-autocomplete": "^2.1.2",
     "angular2-text-mask": "^9.0.0",
     "bootstrap": "^5.2.0-beta1",
     "currency-formatter": "^1.5.9",
