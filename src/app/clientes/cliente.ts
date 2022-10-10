@@ -3,6 +3,7 @@ export class Cliente{
     nome: string;
     cpf: string;
     cidade: string;
+    estado: string;
     dataCadastro: string;
     tipoProcesso: string;
     semana: string;
@@ -18,4 +19,6 @@ export class Cliente{
     situacaoPagamento: string;
     valorLiquido: number;
     gru: string;
+  dtRecebimentoIni: string;
+  dtRecebimentoFin: string;
 }

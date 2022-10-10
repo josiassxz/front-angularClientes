@@ -1,5 +1,5 @@
-<h1 class="mt-4">Clientes</h1>
-<ol class="breadcrumb mb-4">
+<h1 class="mt-4 doNotPrint" >Clientes</h1>
+<ol class="breadcrumb mb-4 doNotPrint">
     <li class="breadcrumb-item active">Consulta</li>
 </ol>
 <div class="container1">
@@ -16,7 +16,7 @@
         </div>
     </div>
 
-    <div class="row">
+    <div class="row doNotPrint">
         <div class="col-md-2">
             <button class="btn btn-warning" (click)="novoCadastro()" >
                 <i class="fa fa-plus"></i> Novo
@@ -24,24 +24,129 @@
         </div>
     </div>
   <br>
-  <div class="ngx-autocomplete">
-    <ngx-autocomplete
-      [searchOnProperty]="nomeFiltro"
-      (inputChanged)='onChangeSearch($event)'
-      [itemTemplate]="itemTemplate"
-      [minQueryLength]="2"
-      (inputChanged)="pesquisaTeste()">
-    </ngx-autocomplete>
+<!--  <div class="ngx-autocomplete doNotPrint" >-->
+<!--    <ngx-autocomplete-->
+<!--      [searchOnProperty]="nomeFiltro"-->
+<!--      (inputChanged)='onChangeSearch($event)'-->
+<!--      [itemTemplate]="itemTemplate"-->
+<!--      [minQueryLength]="2"-->
+<!--      (inputChanged)="pesquisaTeste()">-->
+<!--    </ngx-autocomplete>-->
 
-    <ng-template #itemTemplate let-item>
-    <a [innerHTML]="item.name"></a>
-    </ng-template>
+<!--    <ng-template #itemTemplate let-item>-->
+<!--    <a [innerHTML]="item.name"></a>-->
+<!--    </ng-template>-->
 
-    <ng-template #notFoundTemplate let-notFound>
-    <div [innerHTML]="notFound"></div>
+<!--    <ng-template #notFoundTemplate let-notFound>-->
+<!--    <div [innerHTML]="notFound"></div>-->
 
-  </ng-template>
-</div>
+<!--  </ng-template>-->
+<!--</div>-->
+
+  <div class="flex-container">
+    <div class="col-md-4">
+      <label>Nome Cliente:</label>
+      <input type="text" class="form-control"  [(ngModel)]="filtroCliente.nome"/>
+    </div>
+       <div class="col-md-2">
+         <div class="form-group">
+           <label>Origem: *</label>
+           <select class="form-control" [(ngModel)]="filtroCliente.origem" [ngModelOptions]="{standalone: true}">
+             <option>AGM</option>
+             <option>APN</option>
+             <option>B.FISHER</option>
+             <option>B.PARANA</option>
+             <option>C.PRESIDENTE</option>
+             <option>C.RONDON</option>
+             <option>C.PESCADOR</option>
+             <option>DANILO</option>
+             <option>DIAS NAUTICA</option>
+             <option>ENILDON</option>
+             <option>JOAO CATALÃO</option>
+             <option>MAIS VEICULOS</option>
+             <option>MARCA NAUTICA</option>
+             <option>MARINA DOS AMIGOS</option>
+             <option>ORCA</option>
+             <option>ORIGEM</option>
+             <option>PART.</option>
+             <option>PIER BOATS</option>
+             <option>PIER NAUTICA</option>
+             <option>RADIAL AUTOMOVEIS</option>
+             <option>SAGA APS</option>
+             <option>SAIMONT</option>
+             <option>SÓ PESCA</option>
+             <option>STATUS NAUTICA</option>
+             <option>TSA</option>
+             <option>VNB</option>
+             <option>VNG</option>
+             <option>X</option>
+           </select>
+         </div>
+       </div>
+    <div class="col-md-2">
+      <div class="form-group">
+        <label>Data Recebimento Inicial:</label>
+        <input type="date"  class="form-control" name="DtRecebimentoIni" [(ngModel)]="filtroCliente.dtRecebimentoIni" />
+      </div>
+    </div>
+       <div class="col-md-2">
+         <div class="form-group">
+           <label>Data Recebimento Final:</label>
+           <input type="date"  class="form-control" name="DtRecebimentoFinal"  [(ngModel)]="filtroCliente.dtRecebimentoFin" />
+         </div>
+       </div>
+    <div class="col-md-2">
+      <div class="form-group">
+        <label>Estado: *</label>
+        <select class="form-control" [(ngModel)]="filtroCliente.estado" [ngModelOptions]="{standalone: true}">
+          <option>Acre (AC)</option>
+          <option>Alagoas (AL)</option>
+          <option>Amapá (AP)</option>
+          <option>Amazonas (AM)</option>
+          <option>Bahia (BA)</option>
+          <option>Ceará (CE)</option>
+          <option>Distrito Federal (DF)</option>
+          <option>Espírito Santo (ES)</option>
+          <option>Goiás (GO)</option>
+          <option>Maranhão (MA)</option>
+          <option>Mato Grosso (MT)</option>
+          <option>Mato Grosso do Sul (MS)</option>
+          <option>Minas Gerais (MG)</option>
+          <option>Pará (PA)</option>
+          <option>Paraíba (PB)</option>
+          <option>Paraná (PR)</option>
+          <option>Pernambuco (PE)</option>
+          <option>Piauí (PI)</option>
+          <option>Rio de Janeiro (RJ)</option>
+          <option>Rio Grande do Norte (RN)</option>
+          <option>Rio Grande do Sul (RS)</option>
+          <option>Rondônia (RO)</option>
+          <option>Roraima (RR)</option>
+          <option>Santa Catarina (SC)</option>
+          <option>São Paulo (SP)</option>
+          <option>Sergipe (SE)</option>
+          <option>Tocantins (TO)</option>
+        </select>
+      </div>
+    </div>
+    <div class="col-md-2">
+      <div class="form-group">
+        <label>Semana:</label>
+        <input type="date"  class="form-control"  name="data"  [(ngModel)]="filtroCliente.semana" />
+      </div>
+    </div>
+
+    <div class="col-md-2" >
+      <button  class="btn btn-sm btn-success" (click)="pesquisaAvancada()" data-toggle="modal">
+        Pesquisar
+      </button>
+    </div>
+    <div class="col-md-2" >
+      <button  class="btn btn-sm btn-success" (click)="limpar()" data-toggle="modal">
+        Limpar
+      </button>
+    </div>
+  </div>
     <br />
     <div class="row">
         <div class="col-md-12">
@@ -51,6 +156,7 @@
                         <th>SEMANA</th>
                         <th>CLIENTES</th>
                         <th>CIDADE</th>
+                        <th>ESTADO</th>
                         <th>TP Proc.</th>
                         <th>N. EMBARC.</th>
                         <th>ORIGEM</th>
@@ -69,40 +175,66 @@
                 <tbody>
                     <tr *ngFor="let cliente of clientes">
 
-                        <td>{{ cliente.semana }}</td>
+                      <td>{{ cliente.semana | date : 'dd-MM-yyyy'}}</td>
                         <td>{{ cliente.nome }}</td>
                         <td>{{ cliente.cidade }}</td>
+                        <td>{{ cliente.estado }}</td>
                         <td>{{ cliente.tipoProcesso }}</td>
                         <td>{{ cliente.numEmbarc }}</td>
                         <td>{{ cliente.origem }}</td>
                         <td>{{ cliente.formPgto }}</td>
                         <td>{{ cliente.banco }}</td>
-                        <td>{{ cliente.dataReceb }}</td>
-                        <td>{{ cliente.caixaRecebido }}</td>
+                        <td>{{ cliente.dataReceb | date : 'dd-MM-yyyy'}}</td>
+                        <td>{{ cliente.caixaRecebido | date : 'dd-MM-yyyy'}}</td>
                         <td>{{ cliente.valorServico }}</td>
                         <td>{{ cliente.recebibo }}</td>
                         <td>{{ cliente.areceber }}</td>
                         <td>{{ cliente.situacaoPagamento }}</td>
                         <td>{{ cliente.gru }}</td>
                         <td>{{ cliente.valorLiquido }}</td>
-                        <td>
-                            <button class="btn btn-primary"
+                        <td class="doNotPrint">
+                          <div class="flex-container">
+                            <button class="btn btn-primary btn-sm"
                                     routerLink="/clientes-form/{{ cliente.id }}">
-                                <i class="fa fa-edit"></i>
+                              <i class="fa fa-edit "></i>
                             </button>
 
-                            <button class="btn btn-danger" (click)="preparaDelecao(cliente)"
+                            <button class="btn btn-danger btn-sm" (click)="preparaDelecao(cliente)"
                                     data-toggle="modal" data-target="#modalDelecao">
-                                <i class="fa fa-trash"></i>
+                              <i class="fa fa-trash"></i>
                             </button>
 
-                          <a class="btn btn-success"
-                                  routerLink="/clientes-recibo/{{ cliente.id }}"  target="_blank"
-                          >
-                            <i class="fa fa-print"></i>
-                          </a>
-
+                            <a class="btn btn-success btn-sm"
+                               routerLink="/clientes-recibo/{{ cliente.id }}"  target="_blank"
+                            >
+                              <i class="fa fa-print"></i>
+                            </a>
+                          </div>
                         </td>
+                    </tr>
+
+                    <tr>
+                        <th>TOTAL</th>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>{{total("valorServico")}}</td>
+                        <td>{{total("recebibo")}}</td>
+                        <td>{{total("areceber")}}</td>
+                        <td>--</td>
+                        <td>{{total("gru")}}</td>
+                        <td>{{total("valorLiquido")}}</td>
+                      <td class="doNotPrint">
+                        <button  class="btn btn-sm btn-success" (click)="tablePrint()" data-toggle="modal" data-target="#modalDelecao">
+                          <i class="fa fa-print"></i>
+                      </button></td>
                     </tr>
                 </tbody>
             </table>
@@ -120,7 +252,7 @@
                     Confirma a deleção do(a) Cliente {{ clienteSelecionado.nome }}?
                 </div>
 
-                <div class="modal-footer">
+                <div class="modal-footer ">
                     <button class="btn btn-success" (click)="deletarCliente()"
                             data-dismiss="modal">Confirmar</button>
                     <button class="btn btn-default" data-dismiss="modal">Cancelar</button>

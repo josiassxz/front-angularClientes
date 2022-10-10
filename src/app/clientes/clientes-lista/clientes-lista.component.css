@@ -1,0 +1,11 @@
+@media print{
+  .doNotPrint{display:none !important;}
+}
+.flex-container {
+  flex-direction: row;
+  display: inline-flex;
+  flex-wrap: wrap;
+}
+.fa {
+  font-size: 5px;
+}

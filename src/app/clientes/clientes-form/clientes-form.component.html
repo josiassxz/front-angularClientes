@@ -29,13 +29,48 @@
       <div class="col-md-2">
         <div class="form-group">
           <label>Semana: *</label>
-          <input type="text" class="form-control" [(ngModel)]="cliente.semana" name="data" />
+          <input type="date"  class="form-control" [(ngModel)]="cliente.semana" name="data" />
         </div>
       </div>
       <div class="col-md-3">
         <div class="form-group">
           <label>Nome Cliente: *</label>
           <input type="text" class="form-control" [(ngModel)]="cliente.nome" name="nome"/>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="form-group">
+          <label>Estado: *</label>
+          <!--          <input type="text" class="form-control" [(ngModel)]="cliente.origem" name="origem"/>-->
+          <select class="form-control" [(ngModel)]="cliente.estado" [ngModelOptions]="{standalone: true}">
+            <option>Acre (AC)</option>
+            <option>Alagoas (AL)</option>
+            <option>Amapá (AP)</option>
+            <option>Amazonas (AM)</option>
+            <option>Bahia (BA)</option>
+            <option>Ceará (CE)</option>
+            <option>Distrito Federal (DF)</option>
+            <option>Espírito Santo (ES)</option>
+            <option>Goiás (GO)</option>
+            <option>Maranhão (MA)</option>
+            <option>Mato Grosso (MT)</option>
+            <option>Mato Grosso do Sul (MS)</option>
+            <option>Minas Gerais (MG)</option>
+            <option>Pará (PA)</option>
+            <option>Paraíba (PB)</option>
+            <option>Paraná (PR)</option>
+            <option>Pernambuco (PE)</option>
+            <option>Piauí (PI)</option>
+            <option>Rio de Janeiro (RJ)</option>
+            <option>Rio Grande do Norte (RN)</option>
+            <option>Rio Grande do Sul (RS)</option>
+            <option>Rondônia (RO)</option>
+            <option>Roraima (RR)</option>
+            <option>Santa Catarina (SC)</option>
+            <option>São Paulo (SP)</option>
+            <option>Sergipe (SE)</option>
+            <option>Tocantins (TO)</option>
+          </select>
         </div>
       </div>
 
@@ -169,14 +204,15 @@
       </div>
       <div class="col-md-2">
         <div class="form-group">
+
           <label>Data Recebimento: *</label>
-          <input type="text" class="form-control" [(ngModel)]="cliente.dataReceb" name="dataRecebimento" />
+           <input  type="date" class="form-control" [(ngModel)]="cliente.dataReceb" name="dataRecebimento" />
         </div>
       </div>
       <div class="col-md-2">
         <div class="form-group">
           <label>Cx Recebido: *</label>
-          <input type="text" class="form-control" [(ngModel)]="cliente.caixaRecebido" name="caixaRecebido"/>
+          <input type="date"  class="form-control" [(ngModel)]="cliente.caixaRecebido" name="caixaRecebido"/>
         </div>
       </div>
       <div class="col-md-2">
@@ -194,7 +230,7 @@
       <div class="col-md-2">
         <div class="form-group">
           <label>Valor á Receber: *</label>
-          <input type="text" value="" class="form-control" [(ngModel)]="cliente.areceber" name="valorAReceber"/>
+          <input type="text" value="{{valorReceber()}}" class="form-control" name="valorAReceber" disabled/>
         </div>
       </div>
       <div class="col-md-2">
@@ -212,7 +248,8 @@
       <div class="col-md-2">
         <div class="form-group">
           <label>Valor Liquido: *</label>
-          <input type="text" value="" class="form-control" [(ngModel)]="cliente.valorLiquido" name="valorLiquido"/>
+          <input type="text" value= '{{ valorLiquido() }}' class="form-control" name="valorLiquido"  disabled/>
+
         </div>
       </div>
 

@@ -4,6 +4,7 @@ import { Cliente } from './clientes/cliente';
 import { HttpClient, HttpParams } from '@angular/common/http';
 
 import { Observable } from 'rxjs';
+import {isNotNullOrUndefined} from 'codelyzer/util/isNotNullOrUndefined';
 
 @Injectable({
   providedIn: 'root',
@@ -17,7 +18,39 @@ export class ClientesService {
     return this.http.get<any>(
       'http://localhost:8080/api/clientes/pesquisaFiltro',
       {
-        params: params,
+        params,
+      }
+    );
+  }
+
+  pesquisaAvancada(filtro: Cliente): Observable<Cliente[]> {
+    let params = new HttpParams();
+    if (isNotNullOrUndefined(filtro.nome)){
+      params = params.append('nome', filtro.nome);
+    }
+    if (isNotNullOrUndefined(filtro.origem)){
+      params = params.append('origem', filtro.origem);
+    }
+    if (isNotNullOrUndefined(filtro.dtRecebimentoIni)){
+      params = params.append('dtRecebimentoMim', filtro.dtRecebimentoIni);
+    }
+    if (isNotNullOrUndefined(filtro.dtRecebimentoFin)){
+      params = params.append('dtRecebimentoMax', filtro.dtRecebimentoFin);
+    }
+    if (isNotNullOrUndefined(filtro.situacaoPagamento)){
+      params =  params.append('situacao', filtro.situacaoPagamento);
+    }
+    if (isNotNullOrUndefined(filtro.estado)){
+      params = params.append('estado', filtro.estado);
+    }
+    if (isNotNullOrUndefined(filtro.semana)){
+      params = params.append('semana', filtro.semana);
+    }
+
+    return this.http.get<any>(
+      'http://localhost:8080/api/clientes/pesquisar',
+      {
+        params,
       }
     );
   }

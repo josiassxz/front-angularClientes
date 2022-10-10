@@ -16,7 +16,7 @@ import { DatePipe } from '@angular/common';
 export class ClientesFormComponent implements OnInit {
 
   cliente: Cliente;
-  success: boolean = false;
+  success = false;
   errors: string[];
   id: number;
 
@@ -29,7 +29,7 @@ export class ClientesFormComponent implements OnInit {
   ngOnInit(): void {
     const params: Observable<Params> = this.activatedRoute.params;
     params.subscribe( urlParams => {
-        this.id = urlParams['id'];
+        this.id = urlParams.id;
         if (this.id){
           this.service
             .getClienteById(this.id)
@@ -47,6 +47,7 @@ export class ClientesFormComponent implements OnInit {
 
 
   onSubmit(){
+    this.montaObjetoParaSalvar();
     if (this.id){
 
       this.service
@@ -75,5 +76,24 @@ export class ClientesFormComponent implements OnInit {
     }
 
   }
+
+  valorLiquido(){
+    const result = this.cliente.valorServico -  Number(this.cliente.gru);
+    return Number.isNaN(result) ? 0 : result;
+  }
+
+  valorReceber(){
+    const result = this.cliente.valorServico - this.cliente.recebibo;
+    return Number.isNaN(result) ? 0 : result;
+  }
+
+  montaObjetoParaSalvar(){
+    this.cliente.areceber = this.valorReceber();
+    this.cliente.valorLiquido = this.valorLiquido();
+
+  }
+
+
+
 
 }

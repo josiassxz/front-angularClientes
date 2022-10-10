@@ -18,10 +18,12 @@ export class ClientesListaComponent implements OnInit {
   mensagemSucesso: string;
   mensagemErro: string;
   model: any;
+  filtroCliente: Cliente;
 
   constructor(private service: ClientesService, private router: Router) {}
 
   ngOnInit(): void {
+    this.filtroCliente = new Cliente();
     this.service
       .getClientes()
       .subscribe((resposta) => (this.clientes = resposta));
@@ -64,5 +66,28 @@ export class ClientesListaComponent implements OnInit {
     this.service
       .findSearchNome(this.nomeFiltro)
       .subscribe((resposta) => (this.clientes = resposta));
+  }
+
+  tablePrint() {
+    window.onafterprint = () => window.close();
+    setTimeout(() => window.print(), 1000);
+  }
+
+  total(campo) {
+      let total = 0;
+      this.clientes.forEach(e =>
+      {
+        total += Number(e[campo]);
+      });
+      return total;
+  }
+  pesquisaAvancada(){
+    this.service
+      .pesquisaAvancada(this.filtroCliente)
+      .subscribe((resposta) => (this.clientes = resposta));
+  }
+
+  limpar(){
+    this.filtroCliente = new Cliente();
   }
 }
