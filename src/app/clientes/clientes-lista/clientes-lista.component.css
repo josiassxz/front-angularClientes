@@ -1,5 +1,8 @@
 @media print{
   .doNotPrint{display:none !important;}
+    .light {
+      color: #000 !important;
+    }
 }
 .flex-container {
   flex-direction: row;
@@ -8,4 +11,7 @@
 }
 .fa {
   font-size: 5px;
+}
+.btn-lateral{
+  padding: 10px;
 }

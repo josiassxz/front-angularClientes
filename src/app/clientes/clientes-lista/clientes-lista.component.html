@@ -50,7 +50,7 @@
     </div>
        <div class="col-md-2">
          <div class="form-group">
-           <label>Origem: *</label>
+           <label>Origem:</label>
            <select class="form-control" [(ngModel)]="filtroCliente.origem" [ngModelOptions]="{standalone: true}">
              <option>AGM</option>
              <option>APN</option>
@@ -97,7 +97,7 @@
        </div>
     <div class="col-md-2">
       <div class="form-group">
-        <label>Estado: *</label>
+        <label>Estado:</label>
         <select class="form-control" [(ngModel)]="filtroCliente.estado" [ngModelOptions]="{standalone: true}">
           <option>Acre (AC)</option>
           <option>Alagoas (AL)</option>
@@ -135,17 +135,18 @@
         <input type="date"  class="form-control"  name="data"  [(ngModel)]="filtroCliente.semana" />
       </div>
     </div>
+    <div class="col-sm-1">
+        <button style="margin: 30px" class="btn btn-primary" (click)="pesquisaAvancada()" data-toggle="modal">
+          Pesquisar
+        </button>
 
-    <div class="col-md-2" >
-      <button  class="btn btn-sm btn-success" (click)="pesquisaAvancada()" data-toggle="modal">
-        Pesquisar
-      </button>
     </div>
-    <div class="col-md-2" >
-      <button  class="btn btn-sm btn-success" (click)="limpar()" data-toggle="modal">
-        Limpar
-      </button>
+    <div class="col-sm-1">
+    <button style="margin: 30px " class="btn btn-success" (click)="limpar()" data-toggle="modal">
+      Limpar
+    </button>
     </div>
+
   </div>
     <br />
     <div class="row">
@@ -174,8 +175,7 @@
                 </thead>
                 <tbody>
                     <tr *ngFor="let cliente of clientes">
-
-                      <td>{{ cliente.semana | date : 'dd-MM-yyyy'}}</td>
+                      <td> {{ cliente.semana  | date : 'dd-MM-yyyy' : '+1' : 'pt'}}</td>
                         <td>{{ cliente.nome }}</td>
                         <td>{{ cliente.cidade }}</td>
                         <td>{{ cliente.estado }}</td>

@@ -11,6 +11,10 @@ import { ClientesModule } from './clientes/clientes.module';
 import { ClientesService } from './clientes.service';
 import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import ptBr from '@angular/common/locales/pt';
+import {registerLocaleData} from '@angular/common';
+registerLocaleData(ptBr);
+
 
 @NgModule({
   declarations: [AppComponent, HomeComponent],
@@ -23,7 +27,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     NgbModule,
     FormsModule,
   ],
-  providers: [ClientesService],
+  providers: [ClientesService, { provide: LOCALE_ID, useValue: 'pt' }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
