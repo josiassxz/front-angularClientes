@@ -33,7 +33,8 @@
         <div class="form-group">
           <label id="nomeCliente">CLIENTE: {{cliente.nome}} </label>
           <br>
-          <label> DATA: {{cliente.dataReceb}}</label>
+          <label> DATA: {{cliente.dataReceb  | date : 'dd-MM-yyyy' : '+1' : 'pt'}}</label>
+
           <br>
           <h2>_________________________________________________________________________</h2>
           <br>
