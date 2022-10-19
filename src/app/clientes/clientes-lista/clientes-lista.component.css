@@ -1,11 +1,14 @@
 @media print{
+  .light{
+    -webkit-print-color-adjust:exact !important;
+    background: white  !important;
+    color: #000000;
+    font-weight: bold;
+    border: 2px solid black;
+  }
   .doNotPrint
-  {
-    display:none ;
-    }
-    .light {
-      color: #000 ;
-    }
+  { display:none ;}
+
 }
 .flex-container {
   flex-direction: row;

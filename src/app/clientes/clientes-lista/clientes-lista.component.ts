@@ -3,8 +3,6 @@ import { Router } from '@angular/router';
 
 import { Cliente } from '../cliente';
 import { ClientesService } from '../../clientes.service';
-import { Observable } from 'rxjs';
-import { debounceTime, distinctUntilChanged, map } from 'rxjs/operators';
 import { FormControl } from '@angular/forms';
 
 @Component({
