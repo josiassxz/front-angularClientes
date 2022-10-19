@@ -4,6 +4,7 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 import { Cliente } from '../cliente';
 import { ClientesService } from '../../clientes.service';
 import { Observable } from 'rxjs';
+import {isNotNullOrUndefined} from 'codelyzer/util/isNotNullOrUndefined';
 
 
 
@@ -95,15 +96,38 @@ export class ClientesFormComponent implements OnInit {
 
   }
   clienteToUperCase(){
-    this.cliente.nome = this.cliente.nome.toUpperCase();
-    this.cliente.cidade = this.cliente.cidade.toUpperCase();
-    this.cliente.captania = this.cliente.captania.toUpperCase();
-    this.cliente.tipoProcesso = this.cliente.tipoProcesso.toUpperCase();
-    this.cliente.numEmbarc = this.cliente.numEmbarc.toUpperCase();
-    this.cliente.banco = this.cliente.banco.toUpperCase();
-    this.cliente.origem = this.cliente.origem.toUpperCase();
-    this.cliente.formPgto = this.cliente.formPgto.toUpperCase();
-    this.cliente.situacaoPagamento = this.cliente.situacaoPagamento.toUpperCase();
+    if ( isNotNullOrUndefined(this.cliente.nome )){
+      this.cliente.nome = this.cliente.nome.toUpperCase();
+    };
+    if ( isNotNullOrUndefined(this.cliente.cidade)){
+      this.cliente.cidade = this.cliente.cidade.toUpperCase();
+    };
+    if ( isNotNullOrUndefined(this.cliente.captania)){
+      this.cliente.captania = this.cliente.captania.toUpperCase();
+    };
+    if ( isNotNullOrUndefined(this.cliente.tipoProcesso)){
+      this.cliente.tipoProcesso = this.cliente.tipoProcesso.toUpperCase();
+    };
+    if ( isNotNullOrUndefined( this.cliente.numEmbarc)){
+      this.cliente.numEmbarc = this.cliente.numEmbarc.toUpperCase();
+    };
+    if ( isNotNullOrUndefined(this.cliente.banco )){
+      this.cliente.banco = this.cliente.banco.toUpperCase();
+    };
+    if ( isNotNullOrUndefined( this.cliente.origem)){
+      this.cliente.origem = this.cliente.origem.toUpperCase();
+    };
+    if ( isNotNullOrUndefined(this.cliente.formPgto)){
+      this.cliente.formPgto = this.cliente.formPgto.toUpperCase();
+    };
+    if ( isNotNullOrUndefined( this.cliente.situacaoPagamento)){
+      this.cliente.situacaoPagamento = this.cliente.situacaoPagamento.toUpperCase();
+    };
+
+
+
+
+
   }
 
 

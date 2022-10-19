@@ -480,9 +480,7 @@
       <div class="col-md-2">
         <div class="form-group">
           <label>GRU: *</label>
-          <input type="text" value="" class="form-control" [ngModel]="cliente.gru | currency:'R$'" name="gru"
-                 (ngModelChange)="cliente.gru=$event" name="inputField"
-          />
+          <input type="text" value="" class="form-control" [(ngModel)]="cliente.gru" [ngModelOptions]="{standalone: true}"/>
         </div>
       </div>
       <div class="col-md-2">
