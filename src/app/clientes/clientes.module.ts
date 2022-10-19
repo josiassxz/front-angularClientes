@@ -8,8 +8,6 @@ import { ClientesFormComponent } from './clientes-form/clientes-form.component';
 import { ClientesListaComponent } from './clientes-lista/clientes-lista.component';
 import { ClientesReciboComponent } from './clientes-recibo/clientes-recibo.component';
 import { BrowserModule } from '@angular/platform-browser';
-import { AutoCompleteModule } from 'angular-ngx-autocomplete';
-
 @NgModule({
   declarations: [
     ClientesFormComponent,
@@ -22,8 +20,7 @@ import { AutoCompleteModule } from 'angular-ngx-autocomplete';
     FormsModule,
     TextMaskModule,
     BrowserModule,
-    ReactiveFormsModule,
-    AutoCompleteModule,
+    ReactiveFormsModule
   ],
   exports: [ClientesFormComponent, ClientesListaComponent],
 })

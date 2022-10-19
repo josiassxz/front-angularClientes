@@ -25,7 +25,7 @@ registerLocaleData(ptBr);
     TemplateModule,
     ClientesModule,
     NgbModule,
-    FormsModule,
+    FormsModule
   ],
   providers: [ClientesService, { provide: LOCALE_ID, useValue: 'pt' }],
   bootstrap: [AppComponent],

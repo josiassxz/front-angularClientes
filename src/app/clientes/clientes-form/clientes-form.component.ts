@@ -1,12 +1,11 @@
 
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
-
 import { Cliente } from '../cliente';
 import { ClientesService } from '../../clientes.service';
 import { Observable } from 'rxjs';
-import * as moment from 'moment';
-import { DatePipe } from '@angular/common';
+
+
 
 @Component({
   selector: 'app-clientes-form',
@@ -87,10 +86,24 @@ export class ClientesFormComponent implements OnInit {
     return Number.isNaN(result) ? 0 : result;
   }
 
+
   montaObjetoParaSalvar(){
     this.cliente.areceber = this.valorReceber();
     this.cliente.valorLiquido = this.valorLiquido();
+    this.clienteToUperCase();
 
+
+  }
+  clienteToUperCase(){
+    this.cliente.nome = this.cliente.nome.toUpperCase();
+    this.cliente.cidade = this.cliente.cidade.toUpperCase();
+    this.cliente.captania = this.cliente.captania.toUpperCase();
+    this.cliente.tipoProcesso = this.cliente.tipoProcesso.toUpperCase();
+    this.cliente.numEmbarc = this.cliente.numEmbarc.toUpperCase();
+    this.cliente.banco = this.cliente.banco.toUpperCase();
+    this.cliente.origem = this.cliente.origem.toUpperCase();
+    this.cliente.formPgto = this.cliente.formPgto.toUpperCase();
+    this.cliente.situacaoPagamento = this.cliente.situacaoPagamento.toUpperCase();
   }
 
 

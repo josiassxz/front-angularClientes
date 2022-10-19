@@ -33,13 +33,13 @@
         <div class="form-group">
           <label id="nomeCliente">CLIENTE: {{cliente.nome}} </label>
           <br>
-          <label> DATA: {{cliente.dataReceb}}</label>
+          <label> DATA: {{cliente.dataReceb| date : 'dd/MM/yyyy'}}</label>
           <br>
           <h2>_________________________________________________________________________</h2>
           <br>
           <label id="descricao">DESCRIÇÃO</label>
           <br>
-          <label id="valorRecebido">VALOR:{{cliente.recebibo}}</label>
+          <label id="valorRecebido">VALOR:{{cliente.recebibo | currency : 'R$'}}</label>
 
           <h2>_________________________________________________________________________</h2>
           <br>

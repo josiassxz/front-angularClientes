@@ -3,7 +3,7 @@ export class Cliente{
     nome: string;
     cpf: string;
     cidade: string;
-    estado: string;
+    captania: string;
     dataCadastro: string;
     tipoProcesso: string;
     semana: string;

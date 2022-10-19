@@ -1,7 +1,10 @@
 @media print{
-  .doNotPrint{display:none !important;}
+  .doNotPrint
+  {
+    display:none ;
+    }
     .light {
-      color: #000 !important;
+      color: #000 ;
     }
 }
 .flex-container {

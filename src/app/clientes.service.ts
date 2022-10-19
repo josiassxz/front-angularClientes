@@ -26,10 +26,10 @@ export class ClientesService {
   pesquisaAvancada(filtro: Cliente): Observable<Cliente[]> {
     let params = new HttpParams();
     if (isNotNullOrUndefined(filtro.nome)){
-      params = params.append('nome', filtro.nome);
+      params = params.append('nome', filtro.nome.toLocaleUpperCase());
     }
     if (isNotNullOrUndefined(filtro.origem)){
-      params = params.append('origem', filtro.origem);
+      params = params.append('origem', filtro.origem.toLocaleUpperCase());
     }
     if (isNotNullOrUndefined(filtro.dtRecebimentoIni)){
       params = params.append('dtRecebimentoMim', filtro.dtRecebimentoIni);
@@ -38,10 +38,10 @@ export class ClientesService {
       params = params.append('dtRecebimentoMax', filtro.dtRecebimentoFin);
     }
     if (isNotNullOrUndefined(filtro.situacaoPagamento)){
-      params =  params.append('situacao', filtro.situacaoPagamento);
+      params =  params.append('situacao', filtro.situacaoPagamento.toLocaleUpperCase());
     }
-    if (isNotNullOrUndefined(filtro.estado)){
-      params = params.append('estado', filtro.estado);
+    if (isNotNullOrUndefined(filtro.captania)){
+      params = params.append('captania', filtro.captania.toLocaleUpperCase());
     }
     if (isNotNullOrUndefined(filtro.semana)){
       params = params.append('semana', filtro.semana);

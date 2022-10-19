@@ -97,35 +97,10 @@
        </div>
     <div class="col-md-2">
       <div class="form-group">
-        <label>Estado:</label>
-        <select class="form-control" [(ngModel)]="filtroCliente.estado" [ngModelOptions]="{standalone: true}">
-          <option>Acre (AC)</option>
-          <option>Alagoas (AL)</option>
-          <option>Amapá (AP)</option>
-          <option>Amazonas (AM)</option>
-          <option>Bahia (BA)</option>
-          <option>Ceará (CE)</option>
-          <option>Distrito Federal (DF)</option>
-          <option>Espírito Santo (ES)</option>
-          <option>Goiás (GO)</option>
-          <option>Maranhão (MA)</option>
-          <option>Mato Grosso (MT)</option>
-          <option>Mato Grosso do Sul (MS)</option>
-          <option>Minas Gerais (MG)</option>
-          <option>Pará (PA)</option>
-          <option>Paraíba (PB)</option>
-          <option>Paraná (PR)</option>
-          <option>Pernambuco (PE)</option>
-          <option>Piauí (PI)</option>
-          <option>Rio de Janeiro (RJ)</option>
-          <option>Rio Grande do Norte (RN)</option>
-          <option>Rio Grande do Sul (RS)</option>
-          <option>Rondônia (RO)</option>
-          <option>Roraima (RR)</option>
-          <option>Santa Catarina (SC)</option>
-          <option>São Paulo (SP)</option>
-          <option>Sergipe (SE)</option>
-          <option>Tocantins (TO)</option>
+        <label>Captania:</label>
+        <select class="form-control" [(ngModel)]="filtroCliente.captania" [ngModelOptions]="{standalone: true}">
+          <option>CFB</option>
+          <option>CFGO</option>
         </select>
       </div>
     </div>
@@ -157,7 +132,7 @@
                         <th>SEMANA</th>
                         <th>CLIENTES</th>
                         <th>CIDADE</th>
-                        <th>ESTADO</th>
+                        <th>CAPTANIA</th>
                         <th>TP Proc.</th>
                         <th>N. EMBARC.</th>
                         <th>ORIGEM</th>
@@ -175,23 +150,23 @@
                 </thead>
                 <tbody>
                     <tr *ngFor="let cliente of clientes">
-                      <td> {{ cliente.semana  | date : 'dd-MM-yyyy' : '+1' : 'pt'}}</td>
+                      <td> {{ cliente.semana  | date : 'dd/MM/yyyy' : '+1' : 'pt'}}</td>
                         <td>{{ cliente.nome }}</td>
                         <td>{{ cliente.cidade }}</td>
-                        <td>{{ cliente.estado }}</td>
+                        <td>{{ cliente.captania }}</td>
                         <td>{{ cliente.tipoProcesso }}</td>
                         <td>{{ cliente.numEmbarc }}</td>
                         <td>{{ cliente.origem }}</td>
                         <td>{{ cliente.formPgto }}</td>
                         <td>{{ cliente.banco }}</td>
-                        <td>{{ cliente.dataReceb | date : 'dd-MM-yyyy'}}</td>
-                        <td>{{ cliente.caixaRecebido | date : 'dd-MM-yyyy'}}</td>
-                        <td>{{ cliente.valorServico }}</td>
-                        <td>{{ cliente.recebibo }}</td>
-                        <td>{{ cliente.areceber }}</td>
+                        <td>{{ cliente.dataReceb | date : 'dd/MM/yyyy'}}</td>
+                        <td>{{ cliente.caixaRecebido | date : 'dd/MM/yyyy'}}</td>
+                        <td>{{ cliente.valorServico | currency : 'R$'}}</td>
+                        <td>{{ cliente.recebibo | currency : 'R$'}}</td>
+                        <td>{{ cliente.areceber | currency : 'R$'}}</td>
                         <td>{{ cliente.situacaoPagamento }}</td>
-                        <td>{{ cliente.gru }}</td>
-                        <td>{{ cliente.valorLiquido }}</td>
+                        <td>{{ cliente.gru | currency : 'R$'}}</td>
+                        <td>{{ cliente.valorLiquido | currency : 'R$'}}</td>
                         <td class="doNotPrint">
                           <div class="flex-container">
                             <button class="btn btn-primary btn-sm"
@@ -225,12 +200,12 @@
                         <td>--</td>
                         <td>--</td>
                         <td>--</td>
-                        <td>{{total("valorServico")}}</td>
-                        <td>{{total("recebibo")}}</td>
-                        <td>{{total("areceber")}}</td>
+                        <td>{{total("valorServico")| currency : 'R$'}}</td>
+                        <td>{{total("recebibo")| currency : 'R$'}}</td>
+                        <td>{{total("areceber")| currency : 'R$'}}</td>
                         <td>--</td>
-                        <td>{{total("gru")}}</td>
-                        <td>{{total("valorLiquido")}}</td>
+                        <td>{{total("gru")| currency : 'R$'}}</td>
+                        <td>{{total("valorLiquido")| currency : 'R$'}}</td>
                       <td class="doNotPrint">
                         <button  class="btn btn-sm btn-success" (click)="tablePrint()" data-toggle="modal" data-target="#modalDelecao">
                           <i class="fa fa-print"></i>
