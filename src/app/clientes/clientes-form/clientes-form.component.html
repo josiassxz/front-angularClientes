@@ -29,7 +29,7 @@
       <div class="col-md-2">
         <div class="form-group">
           <label>Semana: *</label>
-          <input type="date"  class="form-control" [(ngModel)]="cliente.semana" name="data" />
+          <input type="date" class="form-control" [ngModel]="cliente.semana| date:'yyyy-MM-dd'" (ngModelChange)="cliente.semana=$event" name="data-semana"/>
         </div>
       </div>
       <div class="col-md-3">
@@ -52,273 +52,273 @@
         <div class="form-group">
           <label>Cidade: *</label>
           <select class="form-control" [(ngModel)]="cliente.cidade" [ngModelOptions]="{standalone: true}">
-            <option>Abadia de Goiás</option>
-            <option>Abadiânia</option>
-            <option>Acreúna</option>
-            <option>Adelândia</option>
-            <option>Água Fria de Goiás</option>
-            <option>Água Limpa</option>
-            <option>Águas Lindas de Goiás</option>
-            <option>Alexânia</option>
-            <option>Aloândia</option>
-            <option>Alto Horizonte</option>
-            <option>Alto Paraíso de Goiás</option>
-            <option>Alvorada do Norte</option>
-            <option>Amaralina</option>
-            <option>Americano do Brasil</option>
-            <option>Amorinópolis</option>
-            <option>Anápolis</option>
-            <option>Anhanguera</option>
-            <option>Anicuns</option>
-            <option>Aparecida de Goiânia</option>
-            <option>Aparecida do Rio Doce</option>
-            <option>Aporé</option>
-            <option>Araçu</option>
-            <option>Aragarças</option>
-            <option>Aragoiânia</option>
-            <option>Araguapaz</option>
-            <option>Arenópolis</option>
-            <option>Aruanã</option>
-            <option>Aurilândia</option>
-            <option>Avelinópolis</option>
-            <option>Baliza</option>
-            <option>Barro Alto</option>
-            <option>Bela Vista de Goiás</option>
-            <option>Bom Jardim de Goiás</option>
-            <option>Bom Jesus de Goiás</option>
-            <option>Bonfinópolis</option>
-            <option>Bonópolis</option>
-            <option>Brazabrantes</option>
-            <option>Britânia</option>
-            <option>Buriti Alegre</option>
-            <option>Buriti de Goiás</option>
-            <option>Buritinópolis</option>
-            <option>Cabeceiras</option>
-            <option>Cachoeira Alta</option>
-            <option>Cachoeira de Goiás</option>
-            <option>Cachoeira Dourada</option>
-            <option>Caçu</option>
-            <option>Caiapônia</option>
-            <option>Caldas Novas</option>
-            <option>Caldazinha</option>
-            <option>Campestre de Goiás</option>
-            <option>Campinaçu</option>
-            <option>Campinorte</option>
-            <option>Campo Alegre de Goiás</option>
-            <option>Campo Limpo de Goiás</option>
-            <option>Campos Belos</option>
-            <option>Campos Verdes</option>
-            <option>Carmo do Rio Verde</option>
-            <option>Castelândia</option>
-            <option>Catalão</option>
-            <option>Caturaí</option>
-            <option>Cavalcante</option>
-            <option>Ceres</option>
-            <option>Cezarina</option>
-            <option>Chapadão do Céu</option>
-            <option>Cidade Ocidental</option>
-            <option>Cocalzinho de Goiás</option>
-            <option>Colinas do Sul</option>
-            <option>Córrego do Ouro</option>
-            <option>Corumbá de Goiás</option>
-            <option>Corumbaíba</option>
-            <option>Cristalina</option>
-            <option>Cristianópolis</option>
-            <option>Crixás</option>
-            <option>Cromínia</option>
-            <option>Cumari</option>
-            <option>Damianópolis</option>
-            <option>Damolândia</option>
-            <option>Davinópolis</option>
-            <option>Diorama</option>
-            <option>Divinópolis de Goiás</option>
-            <option>Doverlândia</option>
-            <option>Edealina</option>
-            <option>Edéia</option>
-            <option>Estrela do Norte</option>
-            <option>Faina</option>
-            <option>Fazenda Nova</option>
-            <option>Firminópolis</option>
-            <option>Flores de Goiás</option>
-            <option>Formosa</option>
-            <option>Formoso</option>
-            <option>Gameleira de Goiás</option>
-            <option>Goianápolis</option>
-            <option>Goiandira</option>
-            <option>Goianésia</option>
-            <option>Goiânia</option>
-            <option>Goianira</option>
-            <option>Goiás</option>
-            <option>Goiatuba</option>
-            <option>Gouvelândia</option>
-            <option>Guapó</option>
-            <option>Guaraíta</option>
-            <option>Guarani de Goiás</option>
-            <option>Guarinos</option>
-            <option>Heitoraí</option>
-            <option>Hidrolândia</option>
-            <option>Hidrolina</option>
-            <option>Iaciara</option>
-            <option>Inaciolândia</option>
-            <option>Indiara</option>
-            <option>Inhumas</option>
-            <option>Ipameri</option>
-            <option>Ipiranga de Goiás</option>
-            <option>Iporá</option>
-            <option>Israelândia</option>
-            <option>Itaberaí</option>
-            <option>Itaguari</option>
-            <option>Itaguaru</option>
-            <option>Itajá</option>
-            <option>Itapaci</option>
-            <option>Itapirapuã</option>
-            <option>Itapuranga</option>
-            <option>Itarumã</option>
-            <option>Itauçu</option>
-            <option>Itumbiara</option>
-            <option>Ivolândia</option>
-            <option>Jandaia</option>
-            <option>Jaraguá</option>
-            <option>Jataí</option>
-            <option>Jaupaci</option>
-            <option>Jesúpolis</option>
-            <option>Joviânia</option>
-            <option>Jussara</option>
-            <option>Lagoa Santa</option>
-            <option>Leopoldo de Bulhões</option>
-            <option>Luziânia</option>
-            <option>Mairipotaba</option>
-            <option>Mambaí</option>
-            <option>Mara Rosa</option>
-            <option>Marzagão</option>
-            <option>Matrinchã</option>
-            <option>Maurilândia</option>
-            <option>Mimoso de Goiás</option>
-            <option>Minaçu</option>
-            <option>Mineiros</option>
-            <option>Moiporá</option>
-            <option>Monte Alegre de Goiás</option>
-            <option>Montes Claros de Goiás</option>
-            <option>Montividiu</option>
-            <option>Montividiu do Norte</option>
-            <option>Morrinhos</option>
-            <option>Morro Agudo de Goiás</option>
-            <option>Mossâmedes</option>
-            <option>Mozarlândia</option>
-            <option>Mundo Novo</option>
-            <option>Mutunópolis</option>
-            <option>Nazário</option>
-            <option>Nerópolis</option>
-            <option>Niquelândia</option>
-            <option>Nova América</option>
-            <option>Nova Aurora</option>
-            <option>Nova Crixás</option>
-            <option>Nova Glória</option>
-            <option>Nova Iguaçu de Goiás</option>
-            <option>Nova Roma</option>
-            <option>Nova Veneza</option>
-            <option>Novo Brasil</option>
-            <option>Novo Gama</option>
-            <option>Novo Planalto</option>
-            <option>Orizona</option>
-            <option>Ouro Verde de Goiás</option>
-            <option>Ouvidor</option>
-            <option>Padre Bernardo</option>
-            <option>Palestina de Goiás</option>
-            <option>Palmeiras de Goiás</option>
-            <option>Palmelo</option>
-            <option>Palminópolis</option>
-            <option>Panamá</option>
-            <option>Paranaiguara</option>
-            <option>Paraúna</option>
-            <option>Perolândia</option>
-            <option>Petrolina de Goiás</option>
-            <option>Pilar de Goiás</option>
-            <option>Piracanjuba</option>
-            <option>Piranhas</option>
-            <option>Pirenópolis</option>
-            <option>Pires do Rio</option>
-            <option>Planaltina</option>
-            <option>Pontalina</option>
-            <option>Porangatu</option>
-            <option>Porteirão</option>
-            <option>Portelândia</option>
-            <option>Posse</option>
-            <option>Professor Jamil</option>
-            <option>Quirinópolis</option>
-            <option>Rialma</option>
-            <option>Rianápolis</option>
-            <option>Rio Quente</option>
-            <option>Rio Verde</option>
-            <option>Rubiataba</option>
-            <option>Sanclerlândia</option>
-            <option>Santa Bárbara de Goiás</option>
-            <option>Santa Cruz de Goiás</option>
-            <option>Santa Fé de Goiás</option>
-            <option>Santa Helena de Goiás</option>
-            <option>Santa Isabel</option>
-            <option>Santa Rita do Araguaia</option>
-            <option>Santa Rita do Novo Destino</option>
-            <option>Santa Rosa de Goiás</option>
-            <option>Santa Tereza de Goiás</option>
-            <option>Santa Terezinha de Goiás</option>
-            <option>Santo Antônio da Barra</option>
-            <option>Santo Antônio de Goiás</option>
-            <option>Santo Antônio do Descoberto</option>
-            <option>São Domingos</option>
-            <option>São Francisco de Goiás</option>
-            <option>São João da Paraúna</option>
-            <option>São João dAliança</option>
-            <option>São Luís de Montes Belos</option>
-            <option>São Luíz do Norte</option>
-            <option>São Miguel do Araguaia</option>
-            <option>São Miguel do Passa Quatro</option>
-            <option>São Patrício</option>
-            <option>São Simão</option>
-            <option>Senador Canedo</option>
-            <option>Serranópolis</option>
-            <option>Silvânia</option>
-            <option>Simolândia</option>
-            <option>Sítio dAbadia</option>
-            <option>Taquaral de Goiás</option>
-            <option>Teresina de Goiás</option>
-            <option>Terezópolis de Goiás</option>
-            <option>Três Ranchos</option>
-            <option>Trindade</option>
-            <option>Trombas</option>
-            <option>Turvânia</option>
-            <option>Turvelândia</option>
-            <option>Uirapuru</option>
-            <option>Uruaçu</option>
-            <option>Uruana</option>
-            <option>Urutaí</option>
-            <option>Valparaíso de Goiás</option>
-            <option>Varjão</option>
-            <option>Vianópolis</option>
-            <option>Vicentinópolis</option>
-            <option>Vila Boa</option>
-            <option>Vila Propício</option>
-            <option>aguas claras </option>
-            <option>arniqueiras </option>
-            <option>brasilia </option>
-            <option>brazlandia </option>
-            <option>candangolandia </option>
-            <option>ceilandia </option>
-            <option>cruzeiro </option>
-            <option>gama </option>
-            <option>guara </option>
-            <option>lago norte </option>
-            <option>lago sul </option>
-            <option>nucleo bandeirante </option>
-            <option>paranoa </option>
-            <option>planaltina </option>
-            <option>recanto das emas </option>
-            <option>riacho fundo </option>
-            <option>samambaia </option>
-            <option>santa maria </option>
-            <option>sao sebastiao </option>
-            <option>sobradinho </option>
-            <option>taguatinga</option>
+            <OPTION>ABADIA DE GOIÁS</OPTION>
+            <OPTION>ABADIÂNIA</OPTION>
+            <OPTION>ACREÚNA</OPTION>
+            <OPTION>ADELÂNDIA</OPTION>
+            <OPTION>ÁGUA FRIA DE GOIÁS</OPTION>
+            <OPTION>ÁGUA LIMPA</OPTION>
+            <OPTION>ÁGUAS LINDAS DE GOIÁS</OPTION>
+            <OPTION>ALEXÂNIA</OPTION>
+            <OPTION>ALOÂNDIA</OPTION>
+            <OPTION>ALTO HORIZONTE</OPTION>
+            <OPTION>ALTO PARAÍSO DE GOIÁS</OPTION>
+            <OPTION>ALVORADA DO NORTE</OPTION>
+            <OPTION>AMARALINA</OPTION>
+            <OPTION>AMERICANO DO BRASIL</OPTION>
+            <OPTION>AMORINÓPOLIS</OPTION>
+            <OPTION>ANÁPOLIS</OPTION>
+            <OPTION>ANHANGUERA</OPTION>
+            <OPTION>ANICUNS</OPTION>
+            <OPTION>APARECIDA DE GOIÂNIA</OPTION>
+            <OPTION>APARECIDA DO RIO DOCE</OPTION>
+            <OPTION>APORÉ</OPTION>
+            <OPTION>ARAÇU</OPTION>
+            <OPTION>ARAGARÇAS</OPTION>
+            <OPTION>ARAGOIÂNIA</OPTION>
+            <OPTION>ARAGUAPAZ</OPTION>
+            <OPTION>ARENÓPOLIS</OPTION>
+            <OPTION>ARUANÃ</OPTION>
+            <OPTION>AURILÂNDIA</OPTION>
+            <OPTION>AVELINÓPOLIS</OPTION>
+            <OPTION>BALIZA</OPTION>
+            <OPTION>BARRO ALTO</OPTION>
+            <OPTION>BELA VISTA DE GOIÁS</OPTION>
+            <OPTION>BOM JARDIM DE GOIÁS</OPTION>
+            <OPTION>BOM JESUS DE GOIÁS</OPTION>
+            <OPTION>BONFINÓPOLIS</OPTION>
+            <OPTION>BONÓPOLIS</OPTION>
+            <OPTION>BRAZABRANTES</OPTION>
+            <OPTION>BRITÂNIA</OPTION>
+            <OPTION>BURITI ALEGRE</OPTION>
+            <OPTION>BURITI DE GOIÁS</OPTION>
+            <OPTION>BURITINÓPOLIS</OPTION>
+            <OPTION>CABECEIRAS</OPTION>
+            <OPTION>CACHOEIRA ALTA</OPTION>
+            <OPTION>CACHOEIRA DE GOIÁS</OPTION>
+            <OPTION>CACHOEIRA DOURADA</OPTION>
+            <OPTION>CAÇU</OPTION>
+            <OPTION>CAIAPÔNIA</OPTION>
+            <OPTION>CALDAS NOVAS</OPTION>
+            <OPTION>CALDAZINHA</OPTION>
+            <OPTION>CAMPESTRE DE GOIÁS</OPTION>
+            <OPTION>CAMPINAÇU</OPTION>
+            <OPTION>CAMPINORTE</OPTION>
+            <OPTION>CAMPO ALEGRE DE GOIÁS</OPTION>
+            <OPTION>CAMPO LIMPO DE GOIÁS</OPTION>
+            <OPTION>CAMPOS BELOS</OPTION>
+            <OPTION>CAMPOS VERDES</OPTION>
+            <OPTION>CARMO DO RIO VERDE</OPTION>
+            <OPTION>CASTELÂNDIA</OPTION>
+            <OPTION>CATALÃO</OPTION>
+            <OPTION>CATURAÍ</OPTION>
+            <OPTION>CAVALCANTE</OPTION>
+            <OPTION>CERES</OPTION>
+            <OPTION>CEZARINA</OPTION>
+            <OPTION>CHAPADÃO DO CÉU</OPTION>
+            <OPTION>CIDADE OCIDENTAL</OPTION>
+            <OPTION>COCALZINHO DE GOIÁS</OPTION>
+            <OPTION>COLINAS DO SUL</OPTION>
+            <OPTION>CÓRREGO DO OURO</OPTION>
+            <OPTION>CORUMBÁ DE GOIÁS</OPTION>
+            <OPTION>CORUMBAÍBA</OPTION>
+            <OPTION>CRISTALINA</OPTION>
+            <OPTION>CRISTIANÓPOLIS</OPTION>
+            <OPTION>CRIXÁS</OPTION>
+            <OPTION>CROMÍNIA</OPTION>
+            <OPTION>CUMARI</OPTION>
+            <OPTION>DAMIANÓPOLIS</OPTION>
+            <OPTION>DAMOLÂNDIA</OPTION>
+            <OPTION>DAVINÓPOLIS</OPTION>
+            <OPTION>DIORAMA</OPTION>
+            <OPTION>DIVINÓPOLIS DE GOIÁS</OPTION>
+            <OPTION>DOVERLÂNDIA</OPTION>
+            <OPTION>EDEALINA</OPTION>
+            <OPTION>EDÉIA</OPTION>
+            <OPTION>ESTRELA DO NORTE</OPTION>
+            <OPTION>FAINA</OPTION>
+            <OPTION>FAZENDA NOVA</OPTION>
+            <OPTION>FIRMINÓPOLIS</OPTION>
+            <OPTION>FLORES DE GOIÁS</OPTION>
+            <OPTION>FORMOSA</OPTION>
+            <OPTION>FORMOSO</OPTION>
+            <OPTION>GAMELEIRA DE GOIÁS</OPTION>
+            <OPTION>GOIANÁPOLIS</OPTION>
+            <OPTION>GOIANDIRA</OPTION>
+            <OPTION>GOIANÉSIA</OPTION>
+            <OPTION>GOIÂNIA</OPTION>
+            <OPTION>GOIANIRA</OPTION>
+            <OPTION>GOIÁS</OPTION>
+            <OPTION>GOIATUBA</OPTION>
+            <OPTION>GOUVELÂNDIA</OPTION>
+            <OPTION>GUAPÓ</OPTION>
+            <OPTION>GUARAÍTA</OPTION>
+            <OPTION>GUARANI DE GOIÁS</OPTION>
+            <OPTION>GUARINOS</OPTION>
+            <OPTION>HEITORAÍ</OPTION>
+            <OPTION>HIDROLÂNDIA</OPTION>
+            <OPTION>HIDROLINA</OPTION>
+            <OPTION>IACIARA</OPTION>
+            <OPTION>INACIOLÂNDIA</OPTION>
+            <OPTION>INDIARA</OPTION>
+            <OPTION>INHUMAS</OPTION>
+            <OPTION>IPAMERI</OPTION>
+            <OPTION>IPIRANGA DE GOIÁS</OPTION>
+            <OPTION>IPORÁ</OPTION>
+            <OPTION>ISRAELÂNDIA</OPTION>
+            <OPTION>ITABERAÍ</OPTION>
+            <OPTION>ITAGUARI</OPTION>
+            <OPTION>ITAGUARU</OPTION>
+            <OPTION>ITAJÁ</OPTION>
+            <OPTION>ITAPACI</OPTION>
+            <OPTION>ITAPIRAPUÃ</OPTION>
+            <OPTION>ITAPURANGA</OPTION>
+            <OPTION>ITARUMÃ</OPTION>
+            <OPTION>ITAUÇU</OPTION>
+            <OPTION>ITUMBIARA</OPTION>
+            <OPTION>IVOLÂNDIA</OPTION>
+            <OPTION>JANDAIA</OPTION>
+            <OPTION>JARAGUÁ</OPTION>
+            <OPTION>JATAÍ</OPTION>
+            <OPTION>JAUPACI</OPTION>
+            <OPTION>JESÚPOLIS</OPTION>
+            <OPTION>JOVIÂNIA</OPTION>
+            <OPTION>JUSSARA</OPTION>
+            <OPTION>LAGOA SANTA</OPTION>
+            <OPTION>LEOPOLDO DE BULHÕES</OPTION>
+            <OPTION>LUZIÂNIA</OPTION>
+            <OPTION>MAIRIPOTABA</OPTION>
+            <OPTION>MAMBAÍ</OPTION>
+            <OPTION>MARA ROSA</OPTION>
+            <OPTION>MARZAGÃO</OPTION>
+            <OPTION>MATRINCHÃ</OPTION>
+            <OPTION>MAURILÂNDIA</OPTION>
+            <OPTION>MIMOSO DE GOIÁS</OPTION>
+            <OPTION>MINAÇU</OPTION>
+            <OPTION>MINEIROS</OPTION>
+            <OPTION>MOIPORÁ</OPTION>
+            <OPTION>MONTE ALEGRE DE GOIÁS</OPTION>
+            <OPTION>MONTES CLAROS DE GOIÁS</OPTION>
+            <OPTION>MONTIVIDIU</OPTION>
+            <OPTION>MONTIVIDIU DO NORTE</OPTION>
+            <OPTION>MORRINHOS</OPTION>
+            <OPTION>MORRO AGUDO DE GOIÁS</OPTION>
+            <OPTION>MOSSÂMEDES</OPTION>
+            <OPTION>MOZARLÂNDIA</OPTION>
+            <OPTION>MUNDO NOVO</OPTION>
+            <OPTION>MUTUNÓPOLIS</OPTION>
+            <OPTION>NAZÁRIO</OPTION>
+            <OPTION>NERÓPOLIS</OPTION>
+            <OPTION>NIQUELÂNDIA</OPTION>
+            <OPTION>NOVA AMÉRICA</OPTION>
+            <OPTION>NOVA AURORA</OPTION>
+            <OPTION>NOVA CRIXÁS</OPTION>
+            <OPTION>NOVA GLÓRIA</OPTION>
+            <OPTION>NOVA IGUAÇU DE GOIÁS</OPTION>
+            <OPTION>NOVA ROMA</OPTION>
+            <OPTION>NOVA VENEZA</OPTION>
+            <OPTION>NOVO BRASIL</OPTION>
+            <OPTION>NOVO GAMA</OPTION>
+            <OPTION>NOVO PLANALTO</OPTION>
+            <OPTION>ORIZONA</OPTION>
+            <OPTION>OURO VERDE DE GOIÁS</OPTION>
+            <OPTION>OUVIDOR</OPTION>
+            <OPTION>PADRE BERNARDO</OPTION>
+            <OPTION>PALESTINA DE GOIÁS</OPTION>
+            <OPTION>PALMEIRAS DE GOIÁS</OPTION>
+            <OPTION>PALMELO</OPTION>
+            <OPTION>PALMINÓPOLIS</OPTION>
+            <OPTION>PANAMÁ</OPTION>
+            <OPTION>PARANAIGUARA</OPTION>
+            <OPTION>PARAÚNA</OPTION>
+            <OPTION>PEROLÂNDIA</OPTION>
+            <OPTION>PETROLINA DE GOIÁS</OPTION>
+            <OPTION>PILAR DE GOIÁS</OPTION>
+            <OPTION>PIRACANJUBA</OPTION>
+            <OPTION>PIRANHAS</OPTION>
+            <OPTION>PIRENÓPOLIS</OPTION>
+            <OPTION>PIRES DO RIO</OPTION>
+            <OPTION>PLANALTINA</OPTION>
+            <OPTION>PONTALINA</OPTION>
+            <OPTION>PORANGATU</OPTION>
+            <OPTION>PORTEIRÃO</OPTION>
+            <OPTION>PORTELÂNDIA</OPTION>
+            <OPTION>POSSE</OPTION>
+            <OPTION>PROFESSOR JAMIL</OPTION>
+            <OPTION>QUIRINÓPOLIS</OPTION>
+            <OPTION>RIALMA</OPTION>
+            <OPTION>RIANÁPOLIS</OPTION>
+            <OPTION>RIO QUENTE</OPTION>
+            <OPTION>RIO VERDE</OPTION>
+            <OPTION>RUBIATABA</OPTION>
+            <OPTION>SANCLERLÂNDIA</OPTION>
+            <OPTION>SANTA BÁRBARA DE GOIÁS</OPTION>
+            <OPTION>SANTA CRUZ DE GOIÁS</OPTION>
+            <OPTION>SANTA FÉ DE GOIÁS</OPTION>
+            <OPTION>SANTA HELENA DE GOIÁS</OPTION>
+            <OPTION>SANTA ISABEL</OPTION>
+            <OPTION>SANTA RITA DO ARAGUAIA</OPTION>
+            <OPTION>SANTA RITA DO NOVO DESTINO</OPTION>
+            <OPTION>SANTA ROSA DE GOIÁS</OPTION>
+            <OPTION>SANTA TEREZA DE GOIÁS</OPTION>
+            <OPTION>SANTA TEREZINHA DE GOIÁS</OPTION>
+            <OPTION>SANTO ANTÔNIO DA BARRA</OPTION>
+            <OPTION>SANTO ANTÔNIO DE GOIÁS</OPTION>
+            <OPTION>SANTO ANTÔNIO DO DESCOBERTO</OPTION>
+            <OPTION>SÃO DOMINGOS</OPTION>
+            <OPTION>SÃO FRANCISCO DE GOIÁS</OPTION>
+            <OPTION>SÃO JOÃO DA PARAÚNA</OPTION>
+            <OPTION>SÃO JOÃO DALIANÇA</OPTION>
+            <OPTION>SÃO LUÍS DE MONTES BELOS</OPTION>
+            <OPTION>SÃO LUÍZ DO NORTE</OPTION>
+            <OPTION>SÃO MIGUEL DO ARAGUAIA</OPTION>
+            <OPTION>SÃO MIGUEL DO PASSA QUATRO</OPTION>
+            <OPTION>SÃO PATRÍCIO</OPTION>
+            <OPTION>SÃO SIMÃO</OPTION>
+            <OPTION>SENADOR CANEDO</OPTION>
+            <OPTION>SERRANÓPOLIS</OPTION>
+            <OPTION>SILVÂNIA</OPTION>
+            <OPTION>SIMOLÂNDIA</OPTION>
+            <OPTION>SÍTIO DABADIA</OPTION>
+            <OPTION>TAQUARAL DE GOIÁS</OPTION>
+            <OPTION>TERESINA DE GOIÁS</OPTION>
+            <OPTION>TEREZÓPOLIS DE GOIÁS</OPTION>
+            <OPTION>TRÊS RANCHOS</OPTION>
+            <OPTION>TRINDADE</OPTION>
+            <OPTION>TROMBAS</OPTION>
+            <OPTION>TURVÂNIA</OPTION>
+            <OPTION>TURVELÂNDIA</OPTION>
+            <OPTION>UIRAPURU</OPTION>
+            <OPTION>URUAÇU</OPTION>
+            <OPTION>URUANA</OPTION>
+            <OPTION>URUTAÍ</OPTION>
+            <OPTION>VALPARAÍSO DE GOIÁS</OPTION>
+            <OPTION>VARJÃO</OPTION>
+            <OPTION>VIANÓPOLIS</OPTION>
+            <OPTION>VICENTINÓPOLIS</OPTION>
+            <OPTION>VILA BOA</OPTION>
+            <OPTION>VILA PROPÍCIO</OPTION>
+            <OPTION>AGUAS CLARAS </OPTION>
+            <OPTION>ARNIQUEIRAS </OPTION>
+            <OPTION>BRASILIA </OPTION>
+            <OPTION>BRAZLANDIA </OPTION>
+            <OPTION>CANDANGOLANDIA </OPTION>
+            <OPTION>CEILANDIA </OPTION>
+            <OPTION>CRUZEIRO </OPTION>
+            <OPTION>GAMA </OPTION>
+            <OPTION>GUARA </OPTION>
+            <OPTION>LAGO NORTE </OPTION>
+            <OPTION>LAGO SUL </OPTION>
+            <OPTION>NUCLEO BANDEIRANTE </OPTION>
+            <OPTION>PARANOA </OPTION>
+            <OPTION>PLANALTINA </OPTION>
+            <OPTION>RECANTO DAS EMAS </OPTION>
+            <OPTION>RIACHO FUNDO </OPTION>
+            <OPTION>SAMAMBAIA </OPTION>
+            <OPTION>SANTA MARIA </OPTION>
+            <OPTION>SAO SEBASTIAO </OPTION>
+            <OPTION>SOBRADINHO </OPTION>
+            <OPTION>TAGUATINGA</OPTION>
           </select>
         </div>
       </div>
@@ -442,15 +442,15 @@
       </div>
       <div class="col-md-2">
         <div class="form-group">
-
           <label>Data Recebimento: *</label>
-           <input  type="date" class="form-control" [(ngModel)]="cliente.dataReceb" name="dataRecebimento" />
+           <input  type="date" class="form-control" [ngModel]="cliente.dataReceb | date:'yyyy-MM-dd'" (ngModelChange)="cliente.dataReceb=$event"  name="dataRecebimento"/>
         </div>
       </div>
       <div class="col-md-2">
         <div class="form-group">
           <label>Cx Recebido: *</label>
-          <input type="date"  class="form-control" [(ngModel)]="cliente.caixaRecebido" name="caixaRecebido"/>
+
+          <input type="date"  class="form-control"[ngModel]="cliente.caixaRecebido| date:'yyyy-MM-dd'" (ngModelChange)="cliente.caixaRecebido=$event" name="caixaRecebido"/>
         </div>
       </div>
       <div class="col-md-2">
