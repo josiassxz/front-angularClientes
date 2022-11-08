@@ -24,24 +24,7 @@
         </div>
     </div>
   <br>
-<!--  <div class="ngx-autocomplete doNotPrint" >-->
-<!--    <ngx-autocomplete-->
-<!--      [searchOnProperty]="nomeFiltro"-->
-<!--      (inputChanged)='onChangeSearch($event)'-->
-<!--      [itemTemplate]="itemTemplate"-->
-<!--      [minQueryLength]="2"-->
-<!--      (inputChanged)="pesquisaTeste()">-->
-<!--    </ngx-autocomplete>-->
 
-<!--    <ng-template #itemTemplate let-item>-->
-<!--    <a [innerHTML]="item.name"></a>-->
-<!--    </ng-template>-->
-
-<!--    <ng-template #notFoundTemplate let-notFound>-->
-<!--    <div [innerHTML]="notFound"></div>-->
-
-<!--  </ng-template>-->
-<!--</div>-->
 
   <div class="flex-container">
     <div class="col-md-4">
@@ -86,7 +69,8 @@
     <div class="col-md-2">
       <div class="form-group">
         <label>Data Recebimento Inicial:</label>
-        <input type="date"  class="form-control" name="DtRecebimentoIni" [(ngModel)]="filtroCliente.dtRecebimentoIni" />
+        <input type="date"  class="form-control" name="DtRecebimentoIni" [(ngModel)]="filtroCliente.dtRecebimentoIni"
+        />
       </div>
     </div>
        <div class="col-md-2">
@@ -95,6 +79,12 @@
            <input type="date"  class="form-control" name="DtRecebimentoFinal"  [(ngModel)]="filtroCliente.dtRecebimentoFin" />
          </div>
        </div>
+    <div class="col-md-2">
+      <div class="form-group">
+        <label>Data Recebimento:</label>
+        <input type="date"  class="form-control" name="DtRecebimento"  [(ngModel)]="filtroCliente.dtRecebimento" />
+      </div>
+    </div>
     <div class="col-md-2">
       <div class="form-group">
         <label>Captania:</label>
@@ -159,7 +149,7 @@
                         <td>{{ cliente.origem }}</td>
                         <td>{{ cliente.formPgto }}</td>
                         <td>{{ cliente.banco }}</td>
-                        <td>{{ cliente.dataReceb | date : 'dd/MM/yyyy'}}</td>
+                        <td>{{ cliente.dataReceb | date : 'dd/MM/yyyy' : '+1' : 'pt'}}</td>
                         <td>{{ cliente.caixaRecebido | date : 'dd/MM/yyyy'}}</td>
                         <td>{{ cliente.valorServico | currency : 'R$'}}</td>
                         <td>{{ cliente.recebibo | currency : 'R$'}}</td>

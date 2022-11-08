@@ -88,4 +88,5 @@ export class ClientesListaComponent implements OnInit {
   limpar(){
     this.filtroCliente = new Cliente();
   }
+
 }

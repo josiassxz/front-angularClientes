@@ -37,6 +37,9 @@ export class ClientesService {
     if (isNotNullOrUndefined(filtro.dtRecebimentoFin)){
       params = params.append('dtRecebimentoMax', filtro.dtRecebimentoFin);
     }
+    if (isNotNullOrUndefined(filtro.dtRecebimento)){
+      params = params.append('dtRecebimento', filtro.dtRecebimento);
+    }
     if (isNotNullOrUndefined(filtro.situacaoPagamento)){
       params =  params.append('situacao', filtro.situacaoPagamento.toLocaleUpperCase());
     }

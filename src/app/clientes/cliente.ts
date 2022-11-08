@@ -21,4 +21,5 @@ export class Cliente{
     gru: string;
   dtRecebimentoIni: string;
   dtRecebimentoFin: string;
+  dtRecebimento: string;
 }
