@@ -100,6 +100,12 @@
         <input type="date"  class="form-control"  name="data"  [(ngModel)]="filtroCliente.semana" />
       </div>
     </div>
+    <div class="col-md-2">
+      <div class="form-group">
+        <label>Situacao:</label>
+        <input type="text" class="form-control" name="data" [(ngModel)]="filtroCliente.situacaoPagamento" />
+      </div>
+    </div>
     <div class="col-sm-1">
         <button style="margin: 30px" class="btn btn-primary" (click)="pesquisaAvancada()" data-toggle="modal">
           Pesquisar
